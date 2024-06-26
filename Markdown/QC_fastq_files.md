@@ -1,4 +1,4 @@
-Quality Control Pipeline of fastq files of small RNA-seq
+Quality Control Pipeline of fastq files of sRNA-seq
 ================
 Victor Enrique Goitea
 2024-06-26

@@ -12,12 +12,12 @@ paired-end FASTQ files.
 
 ## Access to the guides
 
-1. [**Quality Control of fastq files**]()
+1. [**Quality Control of fastq files**](https://github.com/FGM-SDU/sRNA-seq_miRNA/blob/main/Markdown/QC_fastq_files.md)
 Runs FASTQC, Fastq_Screen, AdapterRemoval2, and miRTrace.
 
-2. [**Alignment and quantification of miRNA data using miRDeep2/Bowtie**]()
+2. [**Alignment and quantification of miRNA data using miRDeep2/Bowtie**](https://github.com/FGM-SDU/sRNA-seq_miRNA/blob/main/Markdown/Pipeline_Small_RNA-seq.md)
 
-3. [**Organize files by category**]()
+3. [**Organize files by category**](https://github.com/FGM-SDU/sRNA-seq_miRNA/blob/main/Markdown/Pipeline_Small_RNA-seq.md#output-files-reorganization-optional)
 
 ## General Usage
 1.  Clone Repository and copy the script to your Scripts folder
