@@ -153,8 +153,13 @@ ILLUMINA=$(echo 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCA')  #Default, no need to speci
 SMALL_RNA=$(echo 'TGGAATTCTCGGGTGCCAAGG') # NEXTFLEX smallRNA prep kit adapter
 Nextera=$(echo 'CTGTCTCTTATACACATCT')
 
+# For Nextflex V3
+#AdapterRemoval --threads "${OMP_NUM_THREADS}" --file1 "${RAW_FASTQ_FILE}" --basename "${NAME}" \
+#--gzip --trim3p 4 --trim5p 4 --minlength 10 --adapter1 "${SMALL_RNA}"
+
+# For Nextflex V4
 AdapterRemoval --threads "${OMP_NUM_THREADS}" --file1 "${RAW_FASTQ_FILE}" --basename "${NAME}" \
---gzip --trim3p 4 --trim5p 4 --minlength 10 --adapter1 "${SMALL_RNA}"
+--gzip --minlength 16 --adapter1 "${SMALL_RNA}"
 
 END_SUBPROCESS=$(date +%s)
 RUNTIME_SUBPROCESS=$((END_SUBPROCESS-START_SUBPROCESS))
@@ -205,7 +210,11 @@ START_SUBPROCESS=$(date +%s)
 # -w --write-fasta      Write QC-passed reads and unknown reads. (as defined in the RNA type plot) to the output folder. Identical reads are collapsed. Entries are sorted by abundance.
 # --title Title inside the Report
 
-java -jar $EBROOTMIRTRACE/mirtrace.jar qc -t "${OMP_NUM_THREADS}" --species "${GENOME}" --adapter "${SMALL_RNA}" -p nextflex -o "${NAME}" -w --title "${NAME}" "${RAW_FASTQ_FILE}"
+# For Nextflex V3
+#java -jar $EBROOTMIRTRACE/mirtrace.jar qc -t "${OMP_NUM_THREADS}" --species "${GENOME}" --adapter "${SMALL_RNA}" -p nextflex -o "${NAME}" -w --title "${NAME}" "${RAW_FASTQ_FILE}"
+
+# For Nextflex V4
+java -jar $EBROOTMIRTRACE/mirtrace.jar qc -t "${OMP_NUM_THREADS}" --species "${GENOME}" --adapter "${SMALL_RNA}" -o "${NAME}" -w --title "${NAME}" "${RAW_FASTQ_FILE}"
 
 END_SUBPROCESS=$(date +%s)
 RUNTIME_SUBPROCESS=$((END_SUBPROCESS-START_SUBPROCESS))
