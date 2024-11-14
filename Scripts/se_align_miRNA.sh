@@ -82,7 +82,7 @@ elif [ "${GENOME}" == "mm39" ]; then
   MIRNA_MATURE=/work/References/mirbase/RELEASE_22.1/mature_mmu.fa
 
 elif [ "${GENOME}" == "hg38" ]; then
-  REFERENCE=/work/References/Human/hg38_analysisSet/bowtie1.3.1/
+  REFERENCE=/work/References/Human/hg38_analysisSet/bowtie1.3.1/hg38.analysisSet
   MIRNA_PRECURSOR=/work/References/mirbase/RELEASE_22.1/premature_hsa_hg38.fa
   MIRNA_MATURE=/work/References/mirbase/RELEASE_22.1/mature_hsa.fa
 
